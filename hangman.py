@@ -17,14 +17,16 @@ for _ in range(word_length):
 # the letters in the chosen_word and 'display' has no more blanks ("_"). 
 # Then you can tell the user they've won.    
 
-guess = input("Guess a letter: ").lower()
+while chosen_word != ''.join(display):
 
+    guess = input("Guess a letter: ").lower()
 
-for position in range(word_length):
-    letter = chosen_word[position]
     
-    if letter == guess:
-        display[position] = letter
+    for position in range(word_length):
+        letter = chosen_word[position]
+        
+        if letter == guess:
+            display[position] = letter
 
 
-print(display)
+print(f"You won! The word is {''.join(display)}.")
